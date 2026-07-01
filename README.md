@@ -1,34 +1,62 @@
-Maternal Health Intelligence (MHI) System
-Full-stack project for predicting maternal health risks using Machine Learning. Built with Django (Backend) and React (Frontend).
+# Maternal Health Risk Prediction System
 
-Main Features
-ML Predictions: Analyzes patient vitals and predicts risk levels using models like Random Forest & KNN.
+Bu proje, hamilelik sürecindeki anne adaylarının hayati bulgularını (tansiyon, kan şekeri, vücut ısısı vb.) analiz ederek Makine Öğrenmesi (Random Forest) algoritması ile risk seviyelerini (Düşük/Orta/Yüksek) anlık olarak tahmin eden tam kapsamlı bir web uygulamasıdır.
 
-Modern UI: Responsive dashboard built with React, Vite, and Tailwind CSS.
+## Projeyi Çalıştırma Talimatları
 
-Full Backend: Secure Django API for managing patient records and medical history.
+Proje iki ana kısımdan oluşmaktadır: **Backend (Django)** ve **Frontend (React)**. Projeyi lokal bilgisayarınızda çalıştırmak için aşağıdaki adımları sırasıyla uygulayınız.
 
-Database: Structured relational database for data integrity.
+### 1. Backend (Sunucu) Kurulumu ve Çalıştırılması
+Backend, projenin ana dizininde yer almaktadır.
 
-Tech Stack
-Frontend: React.js, Vite, Tailwind CSS, Axios.
+1. Bir terminal (Komut İstemi veya PowerShell) açın ve projenin ana klasörüne gidin.
+2. Python sanal ortamını (virtual environment) oluşturun ve aktif edin:
+   - **Windows:** 
+     ```bash
+     python -m venv venv
+     .\venv\Scripts\activate
+     ```
+   - **Mac/Linux:** 
+     ```bash
+     python3 -m venv venv
+     source venv/bin/activate
+     ```
+3. Gerekli kütüphaneleri (Makine öğrenmesi ve Django) yükleyin:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Veritabanı tablolarını oluşturun:
+   ```bash
+   python manage.py migrate
+   ```
+5. Django sunucusunu başlatın:
+   ```bash
+   python manage.py runserver
+   ```
+Backend sunucusu `http://127.0.0.1:8000/` adresinde çalışmaya başlayacaktır.
 
-Backend: Python, Django, Django REST Framework.
+---
 
-Machine Learning: Scikit-learn, Pandas, NumPy.
+### 2. Frontend (Kullanıcı Arayüzü) Kurulumu ve Çalıştırılması
+Frontend klasörü, projenin React uygulamasını barındırır. **Yeni bir terminal penceresi açın** ve aşağıdaki adımları uygulayın:
 
-Database: SQLite.
+1. Frontend klasörüne gidin:
+   ```bash
+   cd frontend
+   ```
+2. Gerekli Node.js paketlerini yükleyin:
+   ```bash
+   npm install
+   ```
+3. React geliştirme sunucusunu başlatın:
+   ```bash
+   npm run dev
+   ```
 
-Project Folders
-/frontend: React & Vite source code.
+Frontend sunucusu genellikle `http://localhost:5173/` adresinde çalışacaktır. Terminalde verilen linke Ctrl'ye basılı tutarak tıklayabilir ve projeyi tarayıcınızda görüntüleyebilirsiniz.
 
-/backend: Django API & database config.
-
-/ml_models: Prediction scripts & trained models.
-
-How to Run
-Clone the repo: git clone https://github.com/fatihomar/Maternal_Health.git
-
-Backend: Install requirements and run python manage.py runserver.
-
-Frontend: Run npm install and npm run dev.
+---
+**Grup Üyeleri:**
+- Fatih Ömer (Backend & AI)
+- Mohamad Ghannam (Frontend & UX/UI)
+- Obada Alghourani (Database & QA)

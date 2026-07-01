@@ -20,6 +20,9 @@ urlpatterns = [
     # Appointment Endpoints
     path('appointments/', views.appointment_list, name='appointment_list'),
     path('appointments/create/', views.create_appointment, name='create_appointment'),
+    path('appointments/<int:pk>/status/', views.update_appointment_status, name='update_appointment_status'),
+    path('appointments/book/', views.book_appointment, name='book_appointment'),
+    path('appointments/emergency/', views.book_emergency_appointment, name='book_emergency_appointment'),
     
     # Vitals and ML Predict Endpoints
     path('vitals/predict/', views.create_vitals_predict, name='create_vitals_predict'),
@@ -32,5 +35,10 @@ urlpatterns = [
 
     # Auth Endpoints
     path('auth/login/', views.custom_login, name='login'),
+    path('auth/register/', views.register_patient, name='register_patient'),
     path('auth/me/', views.me, name='me'),
+    path('auth/update-profile/', views.update_profile, name='update_profile'),
+    
+    # Activity Logs Endpoint
+    path('activity-logs/', views.activity_logs_list, name='activity_logs_list'),
 ]
